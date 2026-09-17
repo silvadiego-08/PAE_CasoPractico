@@ -39,7 +39,10 @@ public class LoginController {
             mostrarAlertaError();
             limpiarCampos();
         }
+        txtUsuario.setOnAction(event -> accionIniciarSesion());
+        pswPassword.setOnAction(event -> accionIniciarSesion());
     }
+
 
     @FXML
     public void accionSalir() {
