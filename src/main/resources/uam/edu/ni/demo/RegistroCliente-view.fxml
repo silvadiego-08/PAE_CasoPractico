@@ -6,19 +6,18 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane prefWidth="500.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-
-   <!-- ENCABEZADO -->
+   
    <top>
-      <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
+      <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-background-color: #ffc371; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
          <padding>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
          <children>
             <HBox alignment="CENTER_LEFT">
                <children>
-                  <Label alignment="CENTER" prefHeight="32.0" prefWidth="476.0" text="Registro de Cliente" textFill="#4882c9" HBox.hgrow="ALWAYS">
+                  <Label alignment="CENTER" prefHeight="32.0" prefWidth="476.0" text="Registro de Cliente" textFill="WHITE" HBox.hgrow="ALWAYS">
                      <font>
-                        <Font name="Elephant" size="25.0" />
+                        <Font name="Elephant" size="32.0" />
                      </font>
                   </Label>
                   <StackPane HBox.hgrow="ALWAYS" />
@@ -28,20 +27,18 @@
       </VBox>
    </top>
 
-   <!-- CUERPO PRINCIPAL (FORMULARIO) -->
    <center>
-      <VBox spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox prefWidth="508.0" spacing="15.0" BorderPane.alignment="CENTER">
          <padding>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
          <children>
             <Label text="Información Personal">
                <font>
-                  <Font name="Times New Roman Bold" size="15.0" />
+                  <Font name="Times New Roman Bold" size="17.0" />
                </font>
             </Label>
 
-            <!-- GRID DE 2 COLUMNAS -->
             <GridPane hgap="20.0" vgap="15.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -55,44 +52,59 @@
                </rowConstraints>
                <children>
 
-                  <!-- Fila 0: Nombres y Apellidos -->
                   <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                      <children>
-                        <Label text="Nombres" />
-                        <TextField promptText="Ingrese nombres" />
+                        <Label text="Nombres">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
+                        <TextField prefHeight="11.0" prefWidth="226.0" promptText="Ingrese nombres" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                      <children>
-                        <Label text="Apellidos" />
+                        <Label text="Apellidos">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
                         <TextField promptText="Ingrese apellidos" />
                      </children>
                   </VBox>
 
-                  <!-- Fila 1: Tipo de cliente y Ciudad -->
                   <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Tipo de cliente" />
+                        <Label text="Tipo de cliente">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
                         <ComboBox maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Ciudad" />
+                        <Label text="Ciudad">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
                         <ComboBox maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
                      </children>
                   </VBox>
 
-                  <!-- Fila 2: Fecha de nacimiento y Tipo de solicitud -->
                   <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Fecha de nacimiento" />
+                        <Label text="Fecha de nacimiento">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
                         <DatePicker maxWidth="1.1797693134862315E308" promptText="dd/mm/aaaa" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Tipo de solicitud" />
+                        <Label text="Tipo de solicitud">
+                           <font>
+                              <Font name="Times New Roman Bold" size="13.0" />
+                           </font></Label>
                         <GridPane hgap="10.0" vgap="8.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" />
@@ -107,29 +119,52 @@
                                  <toggleGroup>
                                     <ToggleGroup fx:id="grupoSolicitud" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Contratación" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                              <RadioButton mnemonicParsing="false" text="Soporte" toggleGroup="$grupoSolicitud" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                              <RadioButton mnemonicParsing="false" text="Reclamo" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="Contratación" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Soporte" toggleGroup="$grupoSolicitud" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Reclamo" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></RadioButton>
                            </children>
                         </GridPane>
                      </children>
                   </VBox>
 
-                  <!-- Fila 3: Servicios de interés y Fotografía -->
                   <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
                      <children>
-                        <Label text="SERVICIOS DE INTERÉS">
+                        <Label text="Servicios de interés">
                            <font>
-                              <Font name="System Bold" size="11.0" />
+                              <Font name="Times New Roman Bold" size="13.0" />
                            </font>
                         </Label>
                         <VBox spacing="6.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Internet" />
-                              <CheckBox mnemonicParsing="false" text="Telefonía" />
-                              <CheckBox mnemonicParsing="false" text="Cable" />
-                              <CheckBox mnemonicParsing="false" text="Soporte técnico" />
+                              <CheckBox mnemonicParsing="false" text="Internet">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Telefonía">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Cable">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Soporte técnico">
+                                 <font>
+                                    <Font name="Times New Roman" size="13.0" />
+                                 </font></CheckBox>
                            </children>
                            <VBox.margin>
                               <Insets top="4.0" />
@@ -139,9 +174,9 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Label alignment="CENTER_LEFT" maxWidth="1.1797693134862315E308" text="FOTOGRAFÍA">
+                        <Label alignment="CENTER_LEFT" maxWidth="1.1797693134862315E308" text="Fotografía">
                            <font>
-                              <Font name="System Bold" size="11.0" />
+                              <Font name="Times New Roman Bold" size="12.0" />
                            </font>
                         </Label>
                         <StackPane prefHeight="90.0" prefWidth="120.0" style="-fx-border-color: #aaaaaa; -fx-border-style: dashed; -fx-background-color: #ffffff;">
@@ -149,7 +184,10 @@
                               <Label text="FOTO" textFill="#888888" />
                            </children>
                         </StackPane>
-                        <Button mnemonicParsing="false" text="[ Seleccionar fotografía ]" />
+                        <Button mnemonicParsing="false" text="Seleccionar Fotografía">
+                           <font>
+                              <Font name="Times New Roman" size="13.0" />
+                           </font></Button>
                      </children>
                   </VBox>
 
@@ -159,16 +197,24 @@
       </VBox>
    </center>
 
-   <!-- PIE DE PÁGINA (BOTONES DE ACCIÓN) -->
    <bottom>
-      <HBox alignment="CENTER_RIGHT" spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="500.0" spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
          <padding>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
          <children>
-            <Button mnemonicParsing="false" text="Limpiar" />
-            <Button mnemonicParsing="false" text="Cancelar" />
-            <Button mnemonicParsing="false" style="-fx-font-weight: bold;" text="Guardar" />
+            <Button mnemonicParsing="false" text="Limpiar">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" text="Cancelar">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" style="-fx-font-weight: bold;" text="Guardar">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Button>
          </children>
       </HBox>
    </bottom>
