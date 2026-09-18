@@ -1,10 +1,8 @@
-/* Fondo general de la ventana */
 .fondo-principal {
     -fx-background-color: #f4f6f7;
     -fx-font-family: "Segoe UI", sans-serif;
 }
 
-/* Tarjeta flotante del formulario */
 .tarjeta-login {
     -fx-background-color: #ffffff;
     -fx-background-radius: 10;
@@ -12,7 +10,6 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);
 }
 
-/* Tipografía */
 .titulo {
     -fx-text-fill: #2c3e50;
 }
@@ -38,7 +35,6 @@
     -fx-background-color: #ffffff;
 }
 
-/* Botón Principal (Iniciar Sesión) */
 .boton-primario {
     -fx-background-color: #008f9c;
     -fx-text-fill: white;
@@ -52,7 +48,6 @@
     -fx-background-color: #007680;
 }
 
-/* Botón Secundario (Salir) */
 .boton-secundario {
     -fx-background-color: #e74c3c;
     -fx-text-fill: white;
