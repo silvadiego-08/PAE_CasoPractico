@@ -1,10 +1,19 @@
 package uam.edu.ni.demo.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import uam.edu.ni.demo.model.Usuario;
+
+import java.io.IOException;
+import java.util.Optional;
 
 public class LoginController {
 
@@ -12,13 +21,14 @@ public class LoginController {
     private TextField txtUsuario;
     @FXML
     private PasswordField pswPassword;
-    @FXML
-    private Button btnSalir;
-    @FXML
-    private Button btnIniciarSesion;
 
-    private final String usuario = "admin";
-    private final String contrasena = "admin";
+    private Usuario usuario1;
+    private Usuario usuario2;
+
+    public void initialize() {
+        usuario1 = new Usuario("admin", "admin");
+        usuario2 = new Usuario("Duran", "UAM");
+    }
 
     @FXML
     protected void accionIniciarSesion() {
@@ -33,8 +43,12 @@ public class LoginController {
             mostrarAlertaNull();
             return;
         }
-        if (user.equals(usuario) && password.equals(contrasena)) {
+        if (user.equals(usuario1.getUsername()) && password.equals(usuario1.getPassword())) {
             mostrarAlertaExito();
+            abrirMenu();
+        } else if (user.equals(usuario2.getUsername()) && password.equals(usuario2.getPassword())) {
+            mostrarAlertaExito();
+            abrirMenu();
         } else {
             mostrarAlertaError();
             limpiarCampos();
@@ -46,8 +60,10 @@ public class LoginController {
 
     @FXML
     public void accionSalir() {
-        mostrarAlertaSalir();
-        salir();
+        Optional<ButtonType> confirmacion = mostrarAlertaSalir();
+        if (confirmacion.isPresent() && confirmacion.get() == ButtonType.OK) {
+            salir();
+        }
     }
 
     public void mostrarAlertaNull() {
@@ -74,12 +90,12 @@ public class LoginController {
         alertaExito.showAndWait();
     }
 
-    public void mostrarAlertaSalir() {
+    public Optional<ButtonType> mostrarAlertaSalir() {
         Alert alertaSalir = new Alert(Alert.AlertType.CONFIRMATION);
         alertaSalir.setTitle("Salir del sistema");
         alertaSalir.setHeaderText(null);
         alertaSalir.setContentText("¿Está seguro que desea salir del sistema?");
-        alertaSalir.showAndWait();
+        return alertaSalir.showAndWait();
     }
 
     public void salir() {
@@ -89,5 +105,24 @@ public class LoginController {
         txtUsuario.clear();
         pswPassword.clear();
     }
-}
 
+    private void abrirMenu() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/uam/edu/ni/demo/view/menu.fxml"));
+            Parent root = loader.load();
+            MenuController menuController = loader.getController();
+            menuController.setUsuarioActual(txtUsuario.getText());
+            Stage stageActual = (Stage) txtUsuario.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stageActual.setScene(scene);
+            stageActual.setTitle("Menú principal");
+            stageActual.show();
+        } catch (IOException e) {
+            Alert alertaError = new Alert(Alert.AlertType.ERROR);
+            alertaError.setTitle("Error");
+            alertaError.setHeaderText(null);
+            alertaError.setContentText("No se pudo abrir la vista de menú.");
+            alertaError.showAndWait();
+        }
+    }
+}
