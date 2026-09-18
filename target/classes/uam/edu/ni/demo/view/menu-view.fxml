@@ -23,8 +23,8 @@
                         </Menu>
                         <Menu text="Navegación">
                             <items>
-                                <MenuItem fx:id="mitRegistrar" text="Registrar Cliente" />
-                                <MenuItem fx:id="mitConsultar" text="Consultar Clientes" />
+                                <MenuItem fx:id="mitRegistrar" onAction="#accionAbrirRegistroCliente" text="Registrar Cliente" />
+                                <MenuItem fx:id="mitConsultar" onAction="#accionAbrirConsultaClientes" text="Consultar Clientes" />
                             </items>
                         </Menu>
                         <Menu text="Ayuda">
@@ -37,8 +37,8 @@
 
                 <ToolBar style="-fx-background-color: #0F172A; -fx-padding: 8 15;">
                     <items>
-                        <Button fx:id="btnTB_Registrar"  style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Registrar Cliente" />
-                        <Button fx:id="btnTB_Consultar"  style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Consultar Clientes" />
+                        <Button fx:id="btnTB_Registrar" onAction="#accionAbrirRegistroCliente" style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Registrar Cliente" />
+                        <Button fx:id="btnTB_Consultar" onAction="#accionAbrirConsultaClientes" style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Consultar Clientes" />
                         <Button fx:id="btnTB_ElegirCarpetaReportes" onAction="#accionElegirCarpetasReportes" style="-fx-background-color: #8B5CF6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text=" Carpeta Reportes" />
                         <Button fx:id="btnTB_Salir" onAction="#accionSalir" onKeyPressed="#accionSalir" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Salir" />
                     </items>
@@ -95,8 +95,8 @@
 
                         <HBox alignment="CENTER" spacing="20.0">
                             <children>
-                                <Button fx:id="btnRegistro"  prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #10B981, #059669); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Registrar Cliente" />
-                                <Button fx:id="btnConsultar"  prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #3B82F6, #1D4ED8); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Consultar Clientes" />
+                                <Button fx:id="btnRegistro" onAction="#accionAbrirRegistroCliente" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #10B981, #059669); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Registrar Cliente" />
+                                <Button fx:id="btnConsultar" onAction="#accionAbrirConsultaClientes" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #3B82F6, #1D4ED8); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Consultar Clientes" />
                             </children>
                         </HBox>
 

@@ -209,7 +209,7 @@
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#handleCancelar" text="Cancelar">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#handleCancelar" text="Regresar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>

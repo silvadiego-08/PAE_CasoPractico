@@ -2,10 +2,11 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefWidth="500.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefWidth="500.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uam.edu.ni.demo.controller.RegistroController">
    
    <top>
       <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-background-color: #ffc371; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
@@ -58,7 +59,7 @@
                            <font>
                               <Font name="Times New Roman Bold" size="13.0" />
                            </font></Label>
-                        <TextField prefHeight="11.0" prefWidth="226.0" promptText="Ingrese nombres" />
+                        <TextField fx:id="txtNombres" prefHeight="11.0" prefWidth="226.0" promptText="Ingrese nombres" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -67,7 +68,7 @@
                            <font>
                               <Font name="Times New Roman Bold" size="13.0" />
                            </font></Label>
-                        <TextField promptText="Ingrese apellidos" />
+                        <TextField fx:id="txtApellidos" promptText="Ingrese apellidos" />
                      </children>
                   </VBox>
 
@@ -77,7 +78,7 @@
                            <font>
                               <Font name="Times New Roman Bold" size="13.0" />
                            </font></Label>
-                        <ComboBox maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
+                        <ComboBox fx:id="cbTipoCliente" maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -86,7 +87,7 @@
                            <font>
                               <Font name="Times New Roman Bold" size="13.0" />
                            </font></Label>
-                        <ComboBox maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
+                        <ComboBox fx:id="cbCiudad" maxWidth="1.1797693134862315E308" promptText="Seleccionar" />
                      </children>
                   </VBox>
 
@@ -96,7 +97,7 @@
                            <font>
                               <Font name="Times New Roman Bold" size="13.0" />
                            </font></Label>
-                        <DatePicker maxWidth="1.1797693134862315E308" promptText="dd/mm/aaaa" />
+                        <DatePicker fx:id="dpFechaNacimiento" maxWidth="1.1797693134862315E308" promptText="dd/mm/aaaa" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -115,7 +116,7 @@
                               <RowConstraints vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" selected="true" text="Consulta" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                              <RadioButton fx:id="rbConsulta" mnemonicParsing="false" selected="true" text="Consulta" GridPane.columnIndex="0" GridPane.rowIndex="0">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="grupoSolicitud" />
                                  </toggleGroup>
@@ -123,15 +124,15 @@
                                     <Font name="Times New Roman" size="13.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Contratación" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                              <RadioButton fx:id="rbContratacion" mnemonicParsing="false" text="Contratación" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="0">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Soporte" toggleGroup="$grupoSolicitud" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                              <RadioButton fx:id="rbSoporte" mnemonicParsing="false" text="Soporte" toggleGroup="$grupoSolicitud" GridPane.columnIndex="0" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Reclamo" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <RadioButton fx:id="rbReclamo" mnemonicParsing="false" text="Reclamo" toggleGroup="$grupoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></RadioButton>
@@ -149,19 +150,19 @@
                         </Label>
                         <VBox spacing="6.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Internet">
+                              <CheckBox fx:id="chkInternet" mnemonicParsing="false" text="Internet">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Telefonía">
+                              <CheckBox fx:id="chkTelefonia" mnemonicParsing="false" text="Telefonía">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Cable">
+                              <CheckBox fx:id="chkCable" mnemonicParsing="false" text="Cable">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Soporte técnico">
+                              <CheckBox fx:id="chkSoporteTecnico" mnemonicParsing="false" text="Soporte técnico">
                                  <font>
                                     <Font name="Times New Roman" size="13.0" />
                                  </font></CheckBox>
@@ -182,9 +183,10 @@
                         <StackPane prefHeight="90.0" prefWidth="120.0" style="-fx-border-color: #aaaaaa; -fx-border-style: dashed; -fx-background-color: #ffffff;">
                            <children>
                               <Label text="FOTO" textFill="#888888" />
+                              <ImageView fx:id="imgFotografia" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
-                        <Button mnemonicParsing="false" text="Seleccionar Fotografía">
+                        <Button mnemonicParsing="false" onAction="#handleSeleccionarFotografia" text="Seleccionar Fotografía">
                            <font>
                               <Font name="Times New Roman" size="13.0" />
                            </font></Button>
@@ -203,15 +205,15 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
          <children>
-            <Button mnemonicParsing="false" text="Limpiar">
+            <Button mnemonicParsing="false" onAction="#handleLimpiar" text="Limpiar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-            <Button mnemonicParsing="false" text="Cancelar">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#handleCancelar" text="Regresar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-            <Button mnemonicParsing="false" style="-fx-font-weight: bold;" text="Guardar">
+            <Button mnemonicParsing="false" onAction="#handleGuardar" style="-fx-font-weight: bold;" text="Guardar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>

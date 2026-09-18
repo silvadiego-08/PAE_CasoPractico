@@ -82,7 +82,7 @@
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
             <Button fx:id="handleNuevoCliente" mnemonicParsing="false" onAction="#handleNuevoCliente" text="Nuevo" />
-                <Button mnemonicParsing="false" onAction="#handleCerrar" text="Cerrar">
+                <Button mnemonicParsing="false" onAction="#handleCerrar" text="Regresar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>

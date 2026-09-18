@@ -143,6 +143,48 @@ public class MenuController {
         mostrarAlertaAcercaDe();
     }
     @FXML
+    protected void accionAbrirRegistroCliente(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/uam/edu/ni/demo/view/RegistroCliente-view.fxml"));
+            Parent root = loader.load();
+            Stage stageActual = obtenerStageDesdeEvento(event);
+            if (stageActual == null) {
+                throw new IllegalStateException("No se pudo obtener la ventana actual desde el evento.");
+            }
+            Scene scene = new Scene(root);
+            stageActual.setScene(scene);
+            stageActual.setTitle("Registro de Cliente");
+            stageActual.show();
+        } catch (IOException e) {
+            Alert alertaError = new Alert(Alert.AlertType.ERROR);
+            alertaError.setTitle("Error");
+            alertaError.setHeaderText(null);
+            alertaError.setContentText("No se pudo abrir la vista de registro de cliente.");
+            alertaError.showAndWait();
+        }
+    }
+    @FXML
+    protected void accionAbrirConsultaClientes(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/uam/edu/ni/demo/view/ConsultaClientes-view.fxml"));
+            Parent root = loader.load();
+            Stage stageActual = obtenerStageDesdeEvento(event);
+            if (stageActual == null) {
+                throw new IllegalStateException("No se pudo obtener la ventana actual desde el evento.");
+            }
+            Scene scene = new Scene(root);
+            stageActual.setScene(scene);
+            stageActual.setTitle("Consulta de Clientes");
+            stageActual.show();
+        } catch (IOException e) {
+            Alert alertaError = new Alert(Alert.AlertType.ERROR);
+            alertaError.setTitle("Error");
+            alertaError.setHeaderText(null);
+            alertaError.setContentText("No se pudo abrir la vista de consulta de clientes.");
+            alertaError.showAndWait();
+        }
+    }
+    @FXML
     protected void accionCerrarSesion(ActionEvent event){
         Optional<ButtonType> confirmacion = mostrarAlertaCerrarSesion();
         if (confirmacion.isPresent() && confirmacion.get() == ButtonType.OK) {

@@ -2,7 +2,6 @@ package uam.edu.ni.demo.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -108,7 +107,7 @@ public class LoginController {
 
     private void abrirMenu() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/uam/edu/ni/demo/view/menu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/uam/edu/ni/demo/view/menu-view.fxml"));
             Parent root = loader.load();
             MenuController menuController = loader.getController();
             menuController.setUsuarioActual(txtUsuario.getText());
