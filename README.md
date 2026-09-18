@@ -1,6 +1,6 @@
 # Sistema de Gestión de Solicitudes de Clientes
 
-**Asignatura:** Programación de Aplicaciones de Escritorio
+**Asignatura:** Programación de Aplicaciones de Escritorio  
 **Profesor:** Jose Duran
 
 ## Propósito
