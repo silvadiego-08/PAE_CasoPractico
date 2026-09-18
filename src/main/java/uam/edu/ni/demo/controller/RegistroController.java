@@ -96,7 +96,6 @@ public class RegistroController {
 
     @FXML
     private void handleGuardar(ActionEvent event) {
-        // Validaciones requeridas por la guía (Alert)
         if (txtNombres.getText().trim().isEmpty() || txtApellidos.getText().trim().isEmpty()) {
             mostrarAlerta(Alert.AlertType.WARNING, "Validación", "Por favor ingrese nombres y apellidos.");
             return;
@@ -165,5 +164,8 @@ public class RegistroController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
+
+
 
 }

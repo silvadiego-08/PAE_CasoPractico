@@ -209,11 +209,11 @@
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-            <Button mnemonicParsing="false" text="Cancelar">
+            <Button mnemonicParsing="false" onAction="#handleCancelar" text="Cancelar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-            <Button mnemonicParsing="false" style="-fx-font-weight: bold;" text="Guardar">
+            <Button mnemonicParsing="false" onAction="#handleGuardar" style="-fx-font-weight: bold;" text="Guardar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>

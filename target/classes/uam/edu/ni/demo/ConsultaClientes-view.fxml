@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uam.edu.ni.demo.controller.ConsultaController">
+<BorderPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uam.edu.ni.demo.controller.ConsultaClientes">
 
     <top>
         <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
@@ -40,8 +40,8 @@
 
                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                     <children>
-                        <TextField promptText="Buscar cliente..." HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" text="Actualizar">
+                        <TextField fx:id="txtBuscar" promptText="Buscar cliente..." HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#handleActualizar" text="Actualizar">
                      <font>
                         <Font name="Times New Roman Bold" size="13.0" />
                      </font></Button>
@@ -77,11 +77,12 @@
                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </padding>
             <children>
-                <Button mnemonicParsing="false" text="Editar">
+                <Button fx:id="handleEditar" mnemonicParsing="false" onAction="#handleEditar" text="Editar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
-                <Button mnemonicParsing="false" text="Cerrar">
+            <Button fx:id="handleNuevoCliente" mnemonicParsing="false" onAction="#handleNuevoCliente" text="Nuevo" />
+                <Button mnemonicParsing="false" onAction="#handleCerrar" text="Cerrar">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></Button>
