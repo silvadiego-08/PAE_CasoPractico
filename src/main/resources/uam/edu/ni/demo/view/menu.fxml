@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" onKeyPressed="#handleKeyPressed" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.empresa.proyecto.controladores.VentanaPrincipalController">
+
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+
+                <MenuBar style="-fx-background-color: #1E293B;">
+                    <menus>
+                        <Menu text="Archivo">
+                            <items>
+                                <MenuItem fx:id="menuSeleccionarCarpeta" onAction="#handleSeleccionarCarpeta" text="Elegir Carpeta Reportes" />
+                                <SeparatorMenuItem />
+                                <MenuItem fx:id="menuCerrarSesion" onAction="#handleCerrarSesion" text="Cerrar Sesión" />
+                                <MenuItem fx:id="menuSalir" onAction="#handleSalir" text="Salir del Sistema" />
+                            </items>
+                        </Menu>
+                        <Menu text="Navegación">
+                            <items>
+                                <MenuItem fx:id="menuRegistrar" onAction="#handleAbrirRegistro" text="Registrar Cliente" />
+                                <MenuItem fx:id="menuConsultar" onAction="#handleAbrirConsulta" text="Consultar Clientes" />
+                            </items>
+                        </Menu>
+                        <Menu text="Ayuda">
+                            <items>
+                                <MenuItem fx:id="menuAcercaDe" onAction="#handleAcercaDe" text="Acerca de la Aplicación" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+
+                <ToolBar style="-fx-background-color: #0F172A; -fx-padding: 8 15;">
+                    <items>
+                        <Button fx:id="btnNavRegistrar" onAction="#handleAbrirRegistro" style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Registrar Cliente" />
+                        <Button fx:id="btnNavConsultar" onAction="#handleAbrirConsulta" style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Consultar Clientes" />
+                        <Button fx:id="btnSeleccionarDirectorio" onAction="#handleSeleccionarCarpeta" style="-fx-background-color: #8B5CF6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text=" Carpeta Reportes" />
+                        <Button fx:id="btnSalirTool" onAction="#handleSalir" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand;" text="Salir" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+
+
+    <center>
+        <VBox alignment="CENTER" spacing="25.0" style="-fx-background-color: #F8FAFC;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <children>
+
+                <VBox alignment="CENTER" spacing="6.0">
+                    <children>
+                        <Label text="Sistema de Gestión de Clientes" textFill="#0F172A">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label text="Selecciona una opción del menú superior o utiliza los accesos directos" textFill="#64748B">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="panelCentral" alignment="CENTER" maxWidth="560.0" spacing="20.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-color: #E2E8F0; -fx-border-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 15, 0, 0, 6);">
+                    <padding>
+                        <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+                    </padding>
+                    <children>
+
+                        <Label alignment="CENTER" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right, #4F46E5, #0EA5E9); -fx-background-radius: 8; -fx-padding: 12;" text="Panel de Control Principal" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                            <contextMenu>
+                                <ContextMenu fx:id="contextMenuPrincipal">
+                                    <items>
+                                        <MenuItem fx:id="ctxMenuRegistrar" onAction="#handleAbrirRegistro" text="➕ Ir a Registrar Cliente" />
+                                        <MenuItem fx:id="ctxMenuConsultar" onAction="#handleAbrirConsulta" text="🔍 Ir a Consultar Clientes" />
+                                        <SeparatorMenuItem />
+                                        <MenuItem fx:id="ctxMenuCopiarRuta" onAction="#handleCopiarRuta" text="📋 Copiar Ruta Seleccionada" />
+                                        <MenuItem fx:id="ctxMenuResetearRuta" onAction="#handleResetearRuta" text="🧹 Limpiar Ruta" />
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </Label>
+
+                        <HBox alignment="CENTER" spacing="20.0">
+                            <children>
+                                <Button fx:id="btnAccesoRegistro" onAction="#handleAbrirRegistro" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #10B981, #059669); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Registrar Cliente" />
+                                <Button fx:id="btnAccesoConsulta" onAction="#handleAbrirConsulta" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to right, #3B82F6, #1D4ED8); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 8; -fx-cursor: hand;" text="Consultar Clientes" />
+                            </children>
+                        </HBox>
+
+                        <VBox alignment="CENTER" prefWidth="480.0" style="-fx-background-color: #F1F5F9; -fx-background-radius: 6; -fx-padding: 10;">
+                            <children>
+                                <Label fx:id="lblRutaSeleccionada" text="Ruta de carpeta reportes: No seleccionada" textFill="#475569" wrapText="true">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #0F172A; -fx-padding: 8 15;" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblUsuario" style="-fx-background-color: #334155; -fx-text-fill: #F8FAFC; -fx-padding: 3 8; -fx-background-radius: 4;" text="Usuario: Admin">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblEstado" style="-fx-background-color: #065F46; -fx-text-fill: #34D399; -fx-padding: 3 8; -fx-background-radius: 4;" text="Estado: Conectado">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Presione [ESC] para salir" textFill="#94A3B8">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>
